@@ -1,0 +1,44 @@
+body{
+    margin:0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: bisque;
+    height: 7rem;
+    padding: 1.5rem 5.5rem 1rem;
+    margin-bottom: 4rem;
+}
+
+.navbar_top{
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar_title{
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    flex: 1;
+}
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.navbar-content p{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.profile_pic{
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,30 @@
+.createBlog{
+    margin-top: 2rem;
+    padding: 2rem 15.5rem;
+    background-color:darkgray;
+    height: 100vh;
+    /* text-align: center; */
+}
+
+.createBlog_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 2.5rem;
+    /* height: 50%;/ */
+}
+
+.blog_title{
+    margin-bottom: 1rem;
+    padding:10px;
+}
+
+.blog_desc{
+    margin-bottom: 1rem;
+    padding: 10px;
+}
+
+.blog_btn{
+    margin-top: 1rem;
+}

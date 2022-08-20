@@ -1,0 +1,45 @@
+.bloglist{
+    margin: 2rem 5.5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: beige; */
+    border-bottom: 1px solid black;
+}
+
+.bloglist_info{
+    width: 60%;
+}
+.bloglist_top{
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.name{
+    margin-left: 0.3rem;
+    font-size: 18px;
+}
+
+.date{
+    margin-right: 5px;
+    background-color: rgb(51, 19, 19);
+}
+.date p{
+    padding: 10px;
+    color:white;
+    margin: 0;
+}
+
+.title{
+    font-weight: 700;
+    margin: 0;
+}
+
+.tag{
+    margin-top: 0.5rem;
+    display: inline-block;
+    border-radius: 100px;
+    padding: 8px 16px;
+    background-color: rgba(242, 242, 242, 1);
+}
