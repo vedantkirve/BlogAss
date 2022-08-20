@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import UserProfile from "./UserProfile";
-import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
+// import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
 
 import "./Navbar.css"
 
