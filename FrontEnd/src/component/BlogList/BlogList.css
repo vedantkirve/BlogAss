@@ -35,11 +35,17 @@
     font-weight: 700;
     margin: 0;
 }
-
+.bloglist_bottom{
+    display: flex;
+    margin-top: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
 .tag{
-    margin-top: 0.5rem;
     display: inline-block;
     border-radius: 100px;
-    padding: 8px 16px;
+    padding: 10px 20px;
     background-color: rgba(242, 242, 242, 1);
 }
+
+

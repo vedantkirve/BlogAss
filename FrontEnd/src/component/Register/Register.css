@@ -1,9 +1,10 @@
 .input-div{
     background-color: rgb(164, 216, 216);
     width: 20rem;
-    margin: auto;
+    margin: 5rem auto;
     border-radius: 12px;
     text-align: center;
+    padding: 1rem;
 }
 
 .input-form{

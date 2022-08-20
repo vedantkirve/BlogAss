@@ -1,12 +1,11 @@
 import { useState } from "react"
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 import "./Login.css"
 
 function Login(props){
-    const API_url = "http://127.0.0.1:3000/profile"
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -31,7 +30,8 @@ function Login(props){
         console.log(userID.data[0]);
         localStorage.setItem("userID", userID.data[0].id);
         localStorage.setItem("authorName", userID.data[0].firstName+" "+userID.data[0].lastName);
-        // props.getData(data);
+        
+        props.getData(data);
     }    
 
     return <>   

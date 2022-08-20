@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import img from "./image/user.jpeg"
+
+import UserProfile from "./UserProfile";
+import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
 
 import "./Navbar.css"
 
@@ -8,7 +10,8 @@ function Navbar(){
         <div className="navbar">
             <div className="navbar_top">
                 <div className="navbar_title">BLOG WORLD</div>
-                <img className="profile_pic" src={img} alt="iMAGE"/>
+                {/* <AccountCircleSharpIcon fontSize="large"/> */}
+                <UserProfile />
             </div>
 
             <div className="navbar-content">

@@ -1,0 +1,31 @@
+.body{
+    background-color: antiquewhite;
+    height: 100vh;
+    /* position: relative; */
+   
+}
+
+.noBlogImage{
+     padding-top: 50px;
+    width: 250px;
+    margin: auto;
+    display: block;
+}
+
+.noBlogTitle{
+    font-size: 34px;
+    text-align: center;
+}
+
+.createButton{
+   align-items: center;
+   /* position: absolute; */
+   display: block;
+   margin: auto;
+   font-size: 20px;
+   background-color: azure;
+   border: solid 1px;
+   border-radius: 3px;
+
+   
+}

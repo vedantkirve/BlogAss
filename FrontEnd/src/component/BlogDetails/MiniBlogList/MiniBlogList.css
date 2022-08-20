@@ -1,0 +1,29 @@
+.miniBlogList{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.miniBlogList_Info{
+     margin-right: 20px;
+}
+
+.miniBlogName{
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+.miniBlogTitle{
+    margin-top: 4px;
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.miniBlogImage{
+    height: 80px;
+    width: 80px;
+    border-radius: 10%;
+
+}

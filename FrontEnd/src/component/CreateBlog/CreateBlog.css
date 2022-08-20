@@ -1,9 +1,10 @@
 .createBlog{
     margin-top: 2rem;
-    padding: 2rem 15.5rem;
-    background-color:darkgray;
+    /* padding: 2rem 15.5rem; */
+    padding: 2rem 5.5rem;
+
+    /* background-color:darkgray; */
     height: 100vh;
-    /* text-align: center; */
 }
 
 .createBlog_form{
@@ -15,16 +16,14 @@
     /* height: 50%;/ */
 }
 
-.blog_title{
-    margin-bottom: 1rem;
-    padding:10px;
+.MuiTextField-root{
+    width: 43ch !important;
 }
-
 .blog_desc{
-    margin-bottom: 1rem;
-    padding: 10px;
+    width: 100ch !important;
+    margin-bottom: 2rem !important;
 }
 
 .blog_btn{
-    margin-top: 1rem;
+    margin-left: 8px !important;
 }

@@ -1,0 +1,63 @@
+.avatar {
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding-left: 15px;
+  }
+
+.parent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blogBodyPartOne{
+    margin-top: 1rem;
+    padding-left: 5.5rem;
+}
+
+.blogBodyPartTwo{
+   
+    margin-top: 135px;
+    margin-right: 60px;
+    padding: 40px;
+   background-color: bisque;
+   border-radius: 20px;
+   
+}
+
+.authurName{
+   padding-left: 55px;
+   margin-left: 20px;
+}
+
+.blogTitle{
+    font-size: 40px;
+    
+}
+
+.gmail-icon{
+color: red;
+padding-right: 5px;
+   
+}
+
+.gmail-info{
+ display: flex;
+}
+
+.authur-gmail{
+   
+    padding-left: 10px;
+}
+
+.blogImage{
+    height: 400px;
+    width: 700px;
+}
+
+.blogDescription{
+    
+    width: 700px;
+    font-size: 20px;
+}

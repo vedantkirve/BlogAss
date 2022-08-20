@@ -1,15 +1,15 @@
+import {  useState, useEffect } from 'react';
 import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import Navbar from './component/Navbar';
 import BlogList from './component/BlogList/BlogList';
-import axios from "axios";
+import CreateBlogIcon from './component/CreateBlog/CreateBlogIcon';
+import axios from 'axios';
 
 import './App.css';
-import { useEffect, useState } from 'react';
 
 const UserRegisterInfo=[];
 const UserLoginInfo =[];
-
 
 function App() {
 
@@ -37,18 +37,24 @@ function App() {
 
   },[])
 
-  console.log("BlogList---->>>>>",blogList)
-
   return (
    <div>
     {/* <Register getData={onUserInfo}/> */}
     {/* <Login getData = {onLoginInfo}/> */}
     <Navbar/>
-    {/* /* <BlogList/> */}
+    <CreateBlogIcon/>
+    <BlogList/>
+    <BlogList/>
+    <BlogList/>
+    <BlogList/>
+    <BlogList/>
+    <BlogList/>
+
     {blogList.map((Blog)=>{
       return <BlogList name={Blog.authorName} title={Blog.title} discription={Blog.disciption}/>
 
     })}
+
 
    </div>
   );

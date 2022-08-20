@@ -1,15 +1,10 @@
 import { useState } from "react"
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 import "./Register.css"
 
 function Register(props){
-
-    const API_url = "http://127.0.0.1:3000/profile";
-    const navigate = useNavigate();
-
     const [fname, setFName] = useState("");
     const [lname, setLName] = useState("");
     const [email, setEmail] = useState("");
@@ -35,29 +30,20 @@ function Register(props){
         setCPassword(event.target.value)
     }
 
-    const formHandler =async (event)=>{
+    const formHandler =(event)=>{
         event.preventDefault();
 
         console.log("form submitted")
         // console.log(fname,lname, email, password, cpassword)
 
         let data ={
-            firstName: fname,
-            lastName: lname,
+            fname: fname,
+            lname: lname,
             email: email,
             password: password
         }
         setFName(""); setLName(""); setEmail(""); setPassword(""); setCPassword("")
-
-        let response = await axios.post(API_url,data)
-        if(response.status === 200){
-            navigate("/", {replace:true})
-        }else{
-
-        }
-        console.log("Responses---------",response.status)
-
-        // props.getData(data);
+        props.getData(data);
     }    
 
     return <>   
