@@ -1,8 +1,17 @@
+import { useParams, useNavigate } from "react-router-dom";
 import "./BlogList.css"
 
-function BlogList(){
+function BlogList(props){
+    const navigate = useNavigate();
+
+    const openBlog = ()=>{
+        // let blogID = event.target.id;
+        let blogID = props.id;
+        navigate(`/blogDetail/${blogID}`, {replace:true})
+    }
+
     return <>
-        <div className="bloglist">
+        <div className="bloglist" onClick={openBlog}>
             <div className="bloglist_info">
                 <div className="bloglist_top">
                     <span className="date">

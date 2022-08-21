@@ -41,7 +41,7 @@ function App() {
    <div>
     {/* <Register getData={onUserInfo}/> */}
     {/* <Login getData = {onLoginInfo}/> */}
-    <Navbar/>
+    <Navbar name="explore"/>
     <CreateBlogIcon/>
     <BlogList/>
     <BlogList/>
@@ -51,7 +51,7 @@ function App() {
     <BlogList/>
 
     {blogList.map((Blog)=>{
-      return <BlogList name={Blog.authorName} title={Blog.title} discription={Blog.disciption}/>
+      return <BlogList id ={Blog.blogid} name={Blog.authorName} title={Blog.title} discription={Blog.disciption}/>
 
     })}
 

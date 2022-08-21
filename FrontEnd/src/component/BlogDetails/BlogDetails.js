@@ -1,15 +1,22 @@
-import "./BlogDetails.css"
-import MiniBlogList from "./MiniBlogList/MiniBlogList"
 import axios from "axios"
-import { useEffect } from "react"
-// import MiniBlogList from "./MiniBlogList"
+import { useEffect, useState } from "react"
+import Navbar from "../Navbar"
+import MiniBlogList from "./MiniBlogList/MiniBlogList"
+import "./BlogDetails.css"
 
 function BlogDetails(){
 
-    // useEffect(()=>{
+    const API_url = "http://127.0.0.1:3000/"
+    const [blog, setBlog] = useState({});
 
+    // useEffect(()=>{
+        // const userId = localStorage.getItem("userId");
+
+        // let response = axios.get(API_url+userId);
     // },[])
     return(
+        <>
+            <Navbar/>
         <div className="parent">
             <div className="blogBodyPartOne">  
                 {/* <div>
@@ -48,9 +55,17 @@ function BlogDetails(){
                     
                 </div>
                 <hr></hr>
-                <MiniBlogList></MiniBlogList>
+                <br></br>
+                <p>Looking For More Blogs</p>
+
+                <MiniBlogList/>
+                <MiniBlogList/>
+                <MiniBlogList/>
+
             </div>
         </div>
+        </>
+
     )
 }
 

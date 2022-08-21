@@ -21,7 +21,7 @@ function MyBlogs() {
     // },[])
 
     return <>
-        <Navbar />
+        <Navbar name="myblog" />
         <CreateBlogIcon/>
 
         <BlogList />

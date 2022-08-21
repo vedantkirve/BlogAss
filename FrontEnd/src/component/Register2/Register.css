@@ -1,0 +1,72 @@
+body{
+    background-color: #3D405B;
+}
+/* .reg_parent{
+    background-color: #3D405B;
+    height: 100vh;
+} */
+.input-div{
+    /* background-color: burlywood; */
+    background-color: #F4F1DE;
+    width: 45rem;
+    margin: auto;
+    /* border-radius: 12px; */
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.signupform{
+    display: flex;
+    padding: 30px;
+    padding-left: 40px;
+}
+
+.reg{
+    margin-top: 1.5rem;
+}
+.signupImage{
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.switchLogin{
+    margin-top: 4.2rem !important;
+    cursor: pointer;
+    font-size: 14px;
+    color: grey;
+    text-align: center;
+}
+
+.signupFormContent{
+    margin-left: 3rem;
+/* width: 100%; */
+}
+
+.pass1{
+    width: 15rem;
+}
+.passwordMatch{
+    color: red;
+    display: flex;
+    align-items: center;
+    margin: -10px 3rem 10px!important;
+    font-size: small;
+}
+
+.passwordMatch p{
+    margin: 0;
+    margin-left: 5px;
+}
+
+
+.regBtn{
+    width: 95%;
+    margin-top: 1rem !important;
+    margin-left: 1rem !important;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: #3D405B;
+    color:#fff;
+}

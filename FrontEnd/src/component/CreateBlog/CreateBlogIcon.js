@@ -16,6 +16,7 @@ function CreateBlogIcon() {
 
         <AddCircleIcon
           className="createIcon"
+          sx={{ color: "#F2CC8F" }}
           // onMouseEnter={() => setHover(true)}
           // onMouseLeave={() => setHover(false)}
           onClick={() => navigate("/createblog")}

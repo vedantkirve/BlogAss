@@ -34,8 +34,13 @@ function MyBlogList(props){
             window.location.reload();
 
         }
-        
-        
+    }
+
+    const openBlog = ()=>{
+        // let blogID = event.target.id;
+        let blogID = props.id;
+        navigate(`/blogDetail/${blogID}`, {replace:true})
+        console.log(blogID);
     }
 
     // useEffect(()=>{
@@ -46,9 +51,7 @@ function MyBlogList(props){
     // },[deletedBlog])    
 
     return <>
-        <div className="bloglist">
-           
-
+        <div className="bloglist" onClick={openBlog}>
             <div className="bloglist_info">
                 <div className="bloglist_top">
                     <span className="date">
@@ -65,13 +68,13 @@ function MyBlogList(props){
                     <Stack direction="row" spacing={2} className="btn">
                         <Tooltip title="Edit" id ={props.id} onClick={editHandler}>
                             <IconButton>
-                                <EditIcon />
+                                <EditIcon/>
                             </IconButton>
                         </Tooltip>
 
                         <Tooltip title="Delete" id ={props.id} onClick={deleteHandler}>
                             <IconButton>
-                                <DeleteIcon />
+                                <DeleteIcon/>
                             </IconButton>
                         </Tooltip>
                     </Stack>

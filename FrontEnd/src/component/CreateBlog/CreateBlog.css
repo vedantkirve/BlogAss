@@ -1,10 +1,11 @@
 .createBlog{
     margin-top: 2rem;
-    /* padding: 2rem 15.5rem; */
+    margin: 2rem 5.5rem;
+}
+.createBlog_main{
     padding: 2rem 5.5rem;
+    background-color:#fff;
 
-    /* background-color:darkgray; */
-    height: 100vh;
 }
 
 .createBlog_form{
@@ -23,7 +24,12 @@
     width: 100ch !important;
     margin-bottom: 2rem !important;
 }
-
+.imgurl{
+    width: 73% !important;
+}
 .blog_btn{
+    margin-top: 2rem !important;
     margin-left: 8px !important;
+    margin-bottom: 3rem !important;
+    background-color: #01497c !important;
 }

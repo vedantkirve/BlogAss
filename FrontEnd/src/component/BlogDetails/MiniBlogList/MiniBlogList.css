@@ -1,3 +1,7 @@
+.moreBlog{
+    margin-top: 2rem;
+}
+
 .miniBlogList{
     margin-top: 20px;
     display: flex;
@@ -7,9 +11,15 @@
 .miniBlogList_Info{
      margin-right: 20px;
 }
-
+.miniBlogList_user{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+}
 .miniBlogName{
-    font-size: 12px;
+    font-size: 13px;
+    margin-left: 6px;
     margin-top: 2px;
     margin-bottom: 0px;
 }
@@ -22,8 +32,8 @@
 }
 
 .miniBlogImage{
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
     border-radius: 10%;
 
 }

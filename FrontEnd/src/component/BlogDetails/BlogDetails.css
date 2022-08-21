@@ -9,6 +9,7 @@
 .parent{
     display: flex;
     justify-content: space-between;
+    background-color: #fff;
 }
 
 .blogBodyPartOne{
@@ -21,7 +22,8 @@
     margin-top: 135px;
     margin-right: 60px;
     padding: 40px;
-   background-color: bisque;
+   /* background-color: bisque; */
+   background-color: #F4F1DE;
    border-radius: 20px;
    
 }

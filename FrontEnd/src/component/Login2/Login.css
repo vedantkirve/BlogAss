@@ -1,0 +1,42 @@
+/* body{
+    background-color: #F9DB9C;
+} */
+
+.loginContent{
+    display: flex;
+    justify-content: flex-start;
+    /* background-color: burlywood; */
+    background-color: #F4F1DE;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 30px;
+}
+
+.log{
+    width: 50%;
+}
+
+.loginForm{
+    margin-left: 1rem;
+}
+.loginImage{
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.signupLink{
+    font-size: 16px;
+    margin-left: 100px;
+    text-decoration: underline;
+    
+}
+
+.logBtn{
+    width: 95%;
+    margin-top: 1.5rem !important;
+    margin-left: 1rem !important;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: #81B29A;
+}

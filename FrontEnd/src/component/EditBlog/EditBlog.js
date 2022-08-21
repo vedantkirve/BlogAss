@@ -42,6 +42,7 @@ function EditBlog() {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [tag, setTag] = useState("")
+    const [imgURL, setImgURL] = useState("")
     
     
     console.log("Blog ID", id.blogId);
@@ -56,6 +57,7 @@ function EditBlog() {
             setTitle(response.data[0].title);
             setDesc(response.data[0].disciption);
             setTag(response.data[0].tag)
+            setImgURL(response.data[0].imgURL);
         }
         
         getBlogInfo();
@@ -64,6 +66,7 @@ function EditBlog() {
     const titleHandler =(e) => setTitle(e.target.value);
     const descHandler = (e) => setDesc(e.target.value);
     const tagHandler = (e) => setTag(e.target.value)
+    const imgURLHandler  = (e) => setImgURL(e.target.value);
 
 
     async function editFormHandler(event){
@@ -83,48 +86,53 @@ function EditBlog() {
     return <>
         <Navbar/>
         <div className="editBlog">
-            <h1 className="editBlog_title">Edit Your Blog</h1>
-            <Box
-                component="form"
-                sx={{
-                    "& .MuiTextField-root": { m: 1, width: "25ch" }
-                }}
-                noValidate
-                autoComplete="off"
-                >
-                <div className="createBlog_form">
-                    <div>
-                        <TextField id="outlined-search" label="Title" type="search" value={title} onChange={titleHandler} />
-                        <TextField
-                            id="outlined-select-currency"
-                            select
-                            label="Select"
-                            value={tag}
-                            onChange={tagHandler}
-                            helperText="Please select your tag"
-                            >
-                            {tags.map((option) => (
-                                <MenuItem key={option.value} value={option.value}>
-                                    {option.label}
-                                </MenuItem>
-                            ))}
-                        </TextField>
-                    </div>
+            <div className="editBlog_main">
+                <h1 className="editBlog_title">Edit Your Blog</h1>
+                <Box
+                    component="form"
+                    sx={{
+                        "& .MuiTextField-root": { m: 1, width: "25ch" }
+                    }}
+                    noValidate
+                    autoComplete="off"
+                    >
+                    <div className="createBlog_form">
+                        <div>
+                            <TextField id="outlined-search" label="Title" type="search" value={title} onChange={titleHandler} />
+                            <TextField
+                                id="outlined-select-currency"
+                                select
+                                label="Select"
+                                value={tag}
+                                onChange={tagHandler}
+                                helperText="Please select your tag"
+                                >
+                                {tags.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+                        </div>
 
-                    <TextField
-                        id="outlined-multiline-static"
-                        className="blog_desc"
-                        label="Description"
-                        multiline
-                        rows={10}
-                        value={desc}
-                        onChange={descHandler}
-                    />
-                </div>
-                <Button className="blog_btn" onClick={editFormHandler} variant="contained" endIcon={<SendIcon />}>
-                    Send
-                </Button>
-            </Box>
+                        <TextField
+                            id="outlined-multiline-static"
+                            className="blog_desc"
+                            label="Description"
+                            multiline
+                            rows={10}
+                            value={desc}
+                            onChange={descHandler}
+                        />
+
+                        <TextField id="outlined-search"className="imgurl" label="Image URL" type="search" value={imgURL} onChange={imgURLHandler } />
+
+                    </div>
+                    <Button className="blog_btn" onClick={editFormHandler} variant="contained" endIcon={<SendIcon />}>
+                        Update
+                    </Button>
+                </Box>
+            </div>
         </div>
     </>
 }

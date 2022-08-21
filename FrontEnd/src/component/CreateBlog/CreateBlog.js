@@ -42,6 +42,7 @@ function CreateBlog() {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [tag, setTag] = useState("")
+    const [imgURL, setImgURL] = useState("")
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
@@ -54,7 +55,8 @@ function CreateBlog() {
 
     const titleHandler = (e) => setTitle(e.target.value)
     const descHandler = (e) => setDesc(e.target.value);
-    const tagHandler = (e) => setTag(e.target.value)
+    const tagHandler = (e) => setTag(e.target.value);
+    const imgURLHandler  = (e) => setImgURL(e.target.value);
 
     const blogHandler = async (e) => {
         e.preventDefault();
@@ -63,6 +65,7 @@ function CreateBlog() {
             title: title,
             desc: desc,
             tag: tag,
+            imgURL: imgURL,
             // userId:5,
             date: date.toLocaleDateString(),
             time: date.toLocaleTimeString()
@@ -82,6 +85,8 @@ function CreateBlog() {
     return <>
         <Navbar />
         <div className="createBlog">
+            <div className="createBlog_main">
+
             <h1>Create A Blog</h1>
 
             <Box
@@ -120,11 +125,16 @@ function CreateBlog() {
                         value={desc}
                         onChange={descHandler}
                     />
+
+                    <TextField id="outlined-search"className="imgurl" label="Image URL" type="search" value={imgURL} onChange={imgURLHandler } />
+
                 </div>
                 <Button className="blog_btn" onClick={blogHandler} variant="contained" endIcon={<SendIcon />}>
-                    Send
+                    Upload
                 </Button>
             </Box>
+            </div>
+
         </div>
     </>
 }

@@ -21,6 +21,8 @@ export default function UserProfile() {
   };
 
   const logoutHandler = () =>{
+    localStorage.removeItem("userId");
+    localStorage.removeItem("authorName");
     console.log("logout");
   }
 

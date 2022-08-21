@@ -1,7 +1,11 @@
 .editBlog{
-    padding: 2rem 5.5rem;
-}
+    margin: 2rem 5.5rem;
 
+}
+.editBlog_main{
+    padding: 2rem 5.5rem;
+    background-color:#fff;
+}
 .editBlog_form{
     display: flex;
     flex-direction: column;
