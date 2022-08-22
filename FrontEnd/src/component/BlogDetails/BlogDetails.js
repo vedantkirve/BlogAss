@@ -17,7 +17,7 @@ function BlogDetails(){
     const [userInfo, setUserInfo] = useState([]);
 
 
-    const [log, setLog] = useState();
+    const [log, setLog] = useState(true);
     const navigate = useNavigate();
 
     useEffect(()=>{
@@ -42,11 +42,11 @@ function BlogDetails(){
             setBlogList(data.data.slice(0,4))
 
             // auth
-            if(localStorage.getItem("userID") === null){
-                setLog(false);
-            }else{
-                setLog(true);
-            }
+            // if(localStorage.getItem("userID") === null){
+            //     setLog(false);
+            // }else{
+            //     setLog(true);
+            // }
         }
         // console.log();
         

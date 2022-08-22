@@ -7,7 +7,7 @@ function NoBlog(){
 
     const createBlog =()=>{
         console.log("clicked")
-        // navigate("/createBlog");
+        navigate("/createBlog");
     }
 
     return(
