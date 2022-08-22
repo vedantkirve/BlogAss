@@ -3,6 +3,9 @@ import { useEffect, useState } from "react"
 import Navbar from "../Navbar"
 import MiniBlogList from "./MiniBlogList/MiniBlogList"
 import { useParams, useNavigate } from "react-router-dom";
+
+import MailIcon from '@mui/icons-material/Mail';
+
 import "./BlogDetails.css"
 
 function BlogDetails(){
@@ -10,6 +13,7 @@ function BlogDetails(){
     const id = useParams();
 
     const [blog, setBlog] = useState({});
+    const [blogList,setBlogList] = useState([]);
     const [userInfo, setUserInfo] = useState([]);
 
     useEffect(()=>{
@@ -28,8 +32,13 @@ function BlogDetails(){
             console.log(userResponse.data);
             setUserInfo(userResponse.data)
             setBlog(response.data[0]);
+
+            let data = await axios.get("http://127.0.0.1:3000/allBlogs")
+            console.log("All Blogs-----",data.data)
+            setBlogList(data.data.slice(0,4))
         }
         // console.log();
+        
         getBlogInfo();
     },[])
     return(
@@ -59,20 +68,24 @@ function BlogDetails(){
                     <p className="authurName">{blog.authorName}</p>
                     <div className="gmail-info">
                         
-                        <i className="material-icons gmail-icon">
+                        {/* <i className="material-icons gmail-icon">
                             gmail
-                        </i>
+                        </i> */}
+                        <MailIcon/>
                         <span className="authur-gmail">{userInfo.email}</span>
                     </div>
                     
                 </div>
                 <hr></hr>
                 <br></br>
-                <p>Looking For More Blogs</p>
+                <h3>Looking For More Blogs</h3>
 
+                {blogList.map( (blog)=>{
+                    return <MiniBlogList id={blog.id} name = {blog.authorName} title={blog.title} imgURL={blog.imageUrl}/>
+                })}
+                {/* <MiniBlogList/>
                 <MiniBlogList/>
-                <MiniBlogList/>
-                <MiniBlogList/>
+                <MiniBlogList/> */}
 
             </div>
         </div>

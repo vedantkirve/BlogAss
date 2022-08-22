@@ -1,11 +1,12 @@
 .bloglist{
-    margin: 1.7rem;
-    padding: 2rem 5rem;
+    margin: 1.7rem 2rem;
+    padding: 2rem 4rem;
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     background-color: #fff;
     border-bottom: 1px solid black;
+    border-radius: 16px;
 }
 
 .bloglist_info{

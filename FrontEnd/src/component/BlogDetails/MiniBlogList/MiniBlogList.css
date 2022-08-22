@@ -5,7 +5,8 @@
 .miniBlogList{
     margin-top: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 15rem;
 }
 
 .miniBlogList_Info{
@@ -27,6 +28,7 @@
 .miniBlogTitle{
     margin-top: 4px;
     margin-bottom: 0px;
+    margin-left: 5px;
     font-size: 16px;
     font-weight: bold;
 }

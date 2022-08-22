@@ -9,6 +9,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import IconButton from '@mui/material/IconButton';
 import Logout from '@mui/icons-material/Logout';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import FaceIcon from '@mui/icons-material/Face';
+import Divider from '@mui/material/Divider';
+
 
 
 export default function UserProfile() {
@@ -32,7 +35,7 @@ export default function UserProfile() {
     console.log("logout");
     navigate("/", {replace:true})
   }
-
+  let name = localStorage.getItem("authorName");
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -85,12 +88,21 @@ export default function UserProfile() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
+        <MenuItem>
+          <ListItemIcon>
+            <FaceIcon fontSize="small" />
+          </ListItemIcon>
+          {name}
+        </MenuItem>
+        <Divider/>
+
         <MenuItem onClick={logoutHandler}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
           Logout
         </MenuItem>
+
       </Menu>
     </React.Fragment>
   );

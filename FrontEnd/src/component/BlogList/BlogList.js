@@ -8,7 +8,7 @@ function BlogList(props){
         // let blogID = event.target.id;
         let blogID = props.id;
         console.log(blogID);
-        navigate(`/blogDetail/${blogID}`, {replace:true})
+        navigate(`/blogDetail/${blogID}`)
     }
     let des = props.description;
     return <>

@@ -55,6 +55,8 @@ function MyBlogList(props){
 
     // },[deletedBlog])    
 
+    let des = props.description;
+
     return <>
         <div className="bloglist" >
             <div className="bloglist_info">
@@ -69,7 +71,9 @@ function MyBlogList(props){
                         <p className="name">{props.name}</p>
                     </div>
                     <h1 className="title">{props.title}</h1>
-                    <p className="desc">{props.description}</p>
+                    {/* <p className="desc">{props.description}</p> */}
+                    <p className="desc">{des.substr(0,170)} </p>
+                    <a className="readMore">[.....]</a>
                 </div>
                 <div className="bloglist_bottom">
                     <div className="tag">{props.tag}</div>
