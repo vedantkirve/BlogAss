@@ -80,11 +80,13 @@ function Register(props) {
         if(checkUser.data === "NoUser"){
             let response = await axios.post(API_url,data)
             if(response.status === 200){
-                navigate("/")
+                localStorage.setItem("userID", response.data.id);
+                localStorage.setItem("authorName", response.data.firstName + " " + response.data.lastName);
+                navigate("/home")
             }else{
     
             }
-            console.log("Responses---------",response.status)
+            console.log("Responses---------",response)
         }else{
             alert("User exit");
             navigate("/");

@@ -44,6 +44,8 @@ function EditBlog() {
     const [tag, setTag] = useState("")
     const [imgURL, setImgURL] = useState("")
     
+    const [log, setLog] = useState();
+
     
     console.log("Blog ID", id.id);
     
@@ -58,6 +60,13 @@ function EditBlog() {
             setDesc(response.data[0].description);
             setTag(response.data[0].tags)
             setImgURL(response.data[0].imageUrl);
+
+            // auth
+            if(localStorage.getItem("userID") === null){
+                setLog(false);
+              }else{
+                setLog(true);
+              }
         }
         
         getBlogInfo();
@@ -90,56 +99,62 @@ function EditBlog() {
     console.log("desc: " + desc);
     
     return <>
-        <Navbar/>
-        <div className="editBlog">
-            <div className="editBlog_main">
-                <h1 className="editBlog_title">Edit Your Blog</h1>
-                <Box
-                    component="form"
-                    sx={{
-                        "& .MuiTextField-root": { m: 1, width: "25ch" }
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    >
-                    <div className="createBlog_form">
-                        <div>
-                            <TextField id="outlined-search" label="Title" type="search" value={title} onChange={titleHandler} />
+    {log?
+        <div>
+            <Navbar/>
+            <div className="editBlog">
+                <div className="editBlog_main">
+                    <h1 className="editBlog_title">Edit Your Blog</h1>
+                    <Box
+                        component="form"
+                        sx={{
+                            "& .MuiTextField-root": { m: 1, width: "25ch" }
+                        }}
+                        noValidate
+                        autoComplete="off"
+                        >
+                        <div className="createBlog_form">
+                            <div>
+                                <TextField id="outlined-search" label="Title" type="search" value={title} onChange={titleHandler} />
+                                <TextField
+                                    id="outlined-select-currency"
+                                    select
+                                    label="Select"
+                                    value={tag}
+                                    onChange={tagHandler}
+                                    helperText="Please select your tag"
+                                    >
+                                    {tags.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </div>
+
                             <TextField
-                                id="outlined-select-currency"
-                                select
-                                label="Select"
-                                value={tag}
-                                onChange={tagHandler}
-                                helperText="Please select your tag"
-                                >
-                                {tags.map((option) => (
-                                    <MenuItem key={option.value} value={option.value}>
-                                        {option.label}
-                                    </MenuItem>
-                                ))}
-                            </TextField>
+                                id="outlined-multiline-static"
+                                className="blog_desc"
+                                label="Description"
+                                multiline
+                                rows={10}
+                                value={desc}
+                                onChange={descHandler}
+                            />
+
+                            <TextField id="outlined-search"className="imgurl" label="Image URL" type="search" value={imgURL} onChange={imgURLHandler } />
+
                         </div>
-
-                        <TextField
-                            id="outlined-multiline-static"
-                            className="blog_desc"
-                            label="Description"
-                            multiline
-                            rows={10}
-                            value={desc}
-                            onChange={descHandler}
-                        />
-
-                        <TextField id="outlined-search"className="imgurl" label="Image URL" type="search" value={imgURL} onChange={imgURLHandler } />
-
-                    </div>
-                    <Button className="blog_btn" onClick={editFormHandler} variant="contained" endIcon={<SendIcon />}>
-                        Update
-                    </Button>
-                </Box>
+                        <Button className="blog_btn" onClick={editFormHandler} variant="contained" endIcon={<SendIcon />}>
+                            Update
+                        </Button>
+                    </Box>
+                </div>
             </div>
         </div>
+    :
+        navigate("/")
+    }
     </>
 }
 
