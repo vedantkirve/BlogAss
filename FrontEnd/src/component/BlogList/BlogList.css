@@ -51,4 +51,9 @@
 
 }
 
+.readMore{
+    cursor: pointer;
+    margin-left: 5px;
+    color: #e76f51;
+}
 

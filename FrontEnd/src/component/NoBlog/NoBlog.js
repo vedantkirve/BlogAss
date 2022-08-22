@@ -1,6 +1,15 @@
+import { useParams, useNavigate } from "react-router-dom";
+
 import "./NoBlog.css"
 
 function NoBlog(){
+    const navigate = useNavigate();
+
+    const createBlog =()=>{
+        console.log("clicked")
+        // navigate("/createBlog");
+    }
+
     return(
         <div className="body" >
             <div>
@@ -8,7 +17,7 @@ function NoBlog(){
                     <img className="noBlogImage" src="https://pic.onlinewebfonts.com/svg/img_278242.png" alt="No blog picture"></img>
                 </div>
                 <p className="noBlogTitle">No Blogs Yet</p>
-                <button className="createButton">Create New Blog</button>
+                <button onClick={createBlog} className="createButton">Create New Blog</button>
             </div>
         </div>
     )

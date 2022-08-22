@@ -17,30 +17,35 @@ function MyBlogList(props){
     
 
     const editHandler =(event)=>{
-        let blogID = event.target.id;
-        navigate(`/editBlog/${blogID}`, {replace:true})
         console.log("edit");
+        console.log(event.target.id);
+        let blogID = event.target.id[0];
+        navigate(`/editBlog/${blogID}`)
         console.log(blogID);
     }
 
     const deleteHandler = async (event) =>{
         console.log("delete");
-        let blogID = event.target.id;
+        console.log(event.target.id)
+        let blogID = event.target.id[0];
         const API_url =`http://127.0.0.1:3000/deleteMyBlog/${blogID}`;
         let response = await axios.get(API_url)
         console.log("deleteInfo",response.data)
         
-        for(let i=1;i<=1;i++){
-            window.location.reload();
-
+        if(response.data === 1){
+            alert("deleted");
+            for(let i=1;i<=1;i++){
+                window.location.reload();
+            }
         }
     }
 
     const openBlog = ()=>{
         // let blogID = event.target.id;
         let blogID = props.id;
-        navigate(`/blogDetail/${blogID}`, {replace:true})
+        navigate(`/blogDetail/${blogID}`)
         console.log(blogID);
+
     }
 
     // useEffect(()=>{
@@ -51,30 +56,33 @@ function MyBlogList(props){
     // },[deletedBlog])    
 
     return <>
-        <div className="bloglist" onClick={openBlog}>
+        <div className="bloglist" >
             <div className="bloglist_info">
-                <div className="bloglist_top">
-                    <span className="date">
-                        <p className="date">Aug 15, 2022</p>
-                    </span>
-                    <p>·</p>
-                    <p className="name">{props.name}</p>
+                <div onClick={openBlog}>
+                    <div className="bloglist_top">
+                        <span className="date">
+                            {/* <p className="date">Aug 15, 2022</p> */}
+                            <p className="date">{props.date}</p>
+
+                        </span>
+                        <p>·</p>
+                        <p className="name">{props.name}</p>
+                    </div>
+                    <h1 className="title">{props.title}</h1>
+                    <p className="desc">{props.description}</p>
                 </div>
-                <h1 className="title">{props.title}</h1>
-                <p className="desc">{props.discription}</p>
-                
                 <div className="bloglist_bottom">
-                    <div className="tag">Technology</div>
+                    <div className="tag">{props.tag}</div>
                     <Stack direction="row" spacing={2} className="btn">
-                        <Tooltip title="Edit" id ={props.id} onClick={editHandler}>
+                        <Tooltip title="Edit"  onClick={editHandler}>
                             <IconButton>
-                                <EditIcon/>
+                                <EditIcon id ={`${props.id}edit`}/>
                             </IconButton>
                         </Tooltip>
 
-                        <Tooltip title="Delete" id ={props.id} onClick={deleteHandler}>
+                        <Tooltip title="Delete"  onClick={deleteHandler}>
                             <IconButton>
-                                <DeleteIcon/>
+                                <DeleteIcon id ={`${props.id}delete`}/>
                             </IconButton>
                         </Tooltip>
                     </Stack>

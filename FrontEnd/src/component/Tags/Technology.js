@@ -6,13 +6,13 @@ import CreateBlogIcon from "../CreateBlog/CreateBlogIcon";
 import axios from "axios";
 
 function Technology() {
-    const API_url = "http://127.0.0.1:3000/";
+    const API_url = "http://127.0.0.1:3000/blogsWithParticularTag/Technology";
     const [blogList, setBlogList] = useState([])
 
 
     useEffect(() => {
         async function getBlogList() {
-            let data = await axios.get()
+            let data = await axios.get(API_url)
             console.log("All Blogs-----", data.data)
             setBlogList(data.data)
         }
@@ -25,11 +25,10 @@ function Technology() {
     return <>
         <Navbar name="technology"/>
         <CreateBlogIcon/>
-        <BlogList />
-        {/* {blogList.map((Blog) => {
-            return <BlogList id={Blog.blogid} name={Blog.authorName} title={Blog.title} discription={Blog.disciption} />
+        {blogList.map((Blog)=>{
+            return <BlogList id ={Blog.id} name={Blog.authorName} title={Blog.title} imgURL={Blog.imageUrl} description={Blog.description} tag={Blog.tags} date={Blog.dateTime}/>
 
-        })} */}
+        })}
     </>
 }
 

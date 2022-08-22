@@ -32,9 +32,9 @@ root.render(
       <Route path='/home' element={<App/>}> </Route>
       <Route path="/register" element={<Register/>}></Route>
       <Route path='/createblog' element={<CreateBlog/>}></Route>
-      <Route path='/editblog' element={<EditBlog/>}></Route>
+      <Route path='/editblog/:id' element={<EditBlog/>}></Route>
       <Route path='/myblogs' element={<MyBlogs/>}></Route>
-      <Route path='/blogDetail' element={<BlogDetails/>}></Route>
+      <Route path='/blogDetail/:id' element={<BlogDetails/>}></Route>
       <Route path='/business' element={<Business/>}></Route>
       <Route path='/health' element={<Health/>}></Route>
       <Route path='/science' element={<Science/>}></Route>

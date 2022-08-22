@@ -60,26 +60,30 @@ function CreateBlog() {
 
     const blogHandler = async (e) => {
         e.preventDefault();
+        let userID = localStorage.getItem("userID");
+        let name = localStorage.getItem("authorName");
 
+        console.log(userID, name);
         let blog = {
             title: title,
-            desc: desc,
-            tag: tag,
-            imgURL: imgURL,
-            // userId:5,
-            date: date.toLocaleDateString(),
-            time: date.toLocaleTimeString()
+            description: desc,
+            tags: tag,
+            imageUrl: imgURL,
+            userId: userID,
+            authorName: name,
+            dateTime: date.toLocaleDateString()
+            // time: date.toLocaleTimeString()
         }
         console.log(blog);
 
         let response = await axios.post(API_url,blog)
         if(response.status === 200){
-            navigate("/", {replace:true})
+            navigate("/myblogs")
         }else{
 
         }
         console.log("Responses---------",response)
-        setTitle(""); setDesc(""); setTag("");
+        setTitle(""); setDesc(""); setTag(""); setImgURL("");
     }
 
     return <>

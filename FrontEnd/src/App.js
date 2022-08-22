@@ -15,15 +15,6 @@ function App() {
 
   const [blogList,setBlogList] = useState([])
 
-  const onUserInfo =(d)=>{
-    UserRegisterInfo.push(d);
-    console.log(UserRegisterInfo)
-  }
-
-  const onLoginInfo =(d)=>{
-    UserLoginInfo.push(d);
-    console.log(UserLoginInfo)
-  }
 
   useEffect(()=>{
     async function getBlogList(){
@@ -43,15 +34,9 @@ function App() {
     {/* <Login getData = {onLoginInfo}/> */}
     <Navbar name="explore"/>
     <CreateBlogIcon/>
-    <BlogList/>
-    <BlogList/>
-    <BlogList/>
-    <BlogList/>
-    <BlogList/>
-    <BlogList/>
 
     {blogList.map((Blog)=>{
-      return <BlogList id ={Blog.blogid} name={Blog.authorName} title={Blog.title} discription={Blog.disciption}/>
+      return <BlogList id ={Blog.id} name={Blog.authorName} title={Blog.title} imgURL={Blog.imageUrl} description={Blog.description} tag={Blog.tags} date={Blog.dateTime}/>
 
     })}
 

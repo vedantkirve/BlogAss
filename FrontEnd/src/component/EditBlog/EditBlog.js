@@ -45,19 +45,19 @@ function EditBlog() {
     const [imgURL, setImgURL] = useState("")
     
     
-    console.log("Blog ID", id.blogId);
+    console.log("Blog ID", id.id);
     
     useEffect(() => {
         async function getBlogInfo() {
-            const API_url = `http://127.0.0.1:3000/myBlogInfo/${id.blogId}`;
+            const API_url = `http://127.0.0.1:3000/myBlogInfo/${id.id}`;
             console.log(API_url, "APiiiiiiii");
             
             let response = await axios.get(API_url);
             console.log("response---->>>>", response.data);
             setTitle(response.data[0].title);
-            setDesc(response.data[0].disciption);
-            setTag(response.data[0].tag)
-            setImgURL(response.data[0].imgURL);
+            setDesc(response.data[0].description);
+            setTag(response.data[0].tags)
+            setImgURL(response.data[0].imageUrl);
         }
         
         getBlogInfo();
@@ -71,12 +71,18 @@ function EditBlog() {
 
     async function editFormHandler(event){
         event.preventDefault()
-        let data = await axios.put(`http://localhost:3000/editMyBlog/${id.blogId}`,{title:title,disciption:desc,tag: tag})
+        let newData = {
+            title: title,
+            description: desc,
+            tags: tag,
+            imageUrl: imgURL
+        }
+        let data = await axios.put(`http://localhost:3000/editMyBlog/${id.id}`,newData)
         console.log("Response given by submit key",data.response);
         setTitle("");
         setDesc("");
         setTag("");
-        navigate("/myblogs",{replace:true})
+        navigate("/myblogs")
 
     } 
 

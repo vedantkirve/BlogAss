@@ -7,7 +7,7 @@
 
 .noBlogImage{
      padding-top: 50px;
-    width: 250px;
+    width: 150px;
     margin: auto;
     display: block;
 }
@@ -19,13 +19,14 @@
 
 .createButton{
    align-items: center;
-   /* position: absolute; */
    display: block;
    margin: auto;
    font-size: 20px;
-   background-color: azure;
-   border: solid 1px;
+   /* background-color: azure; */
+   background-color: #e9c46a;
+   border: solid 1px ;
    border-radius: 3px;
-
+    padding: 8px 16px;
+    cursor: pointer;
    
 }

@@ -22,8 +22,9 @@ import "./Register.css"
 
 function Register(props) {
 
-
-    // const API_url = "http://127.0.0.1:3000/profile";
+    const API_checkUser = "http://127.0.0.1:3000/userId"
+    const API_url = "http://127.0.0.1:3000/profile";
+    
     const navigate = useNavigate();
 
     const [fname, setFName] = useState("");
@@ -72,13 +73,22 @@ function Register(props) {
         setFName(""); setLName(""); setEmail(""); setPassword(""); setCPassword("");
         console.log(data);
 
-        // let response = await axios.post(API_url,data)
-        // if(response.status === 200){
-        //     navigate("/", {replace:true})
-        // }else{
+        let checkUser = await axios.post(API_checkUser, {email:email, password: password});
 
-        // }
-        // console.log("Responses---------",response.status)
+        console.log(checkUser.data);
+
+        if(checkUser.data === "NoUser"){
+            let response = await axios.post(API_url,data)
+            if(response.status === 200){
+                navigate("/")
+            }else{
+    
+            }
+            console.log("Responses---------",response.status)
+        }else{
+            alert("User exit");
+            navigate("/");
+        }
 
         // props.getData(data);
     }

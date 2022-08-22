@@ -63,10 +63,16 @@ function Login(props) {
 
         let userID = await axios.post("http://127.0.0.1:3000/userId", data)
 
-        console.log(userID.data[0]);
-        localStorage.setItem("userID", userID.data[0].id);
-        localStorage.setItem("authorName", userID.data[0].firstName + " " + userID.data[0].lastName);
-        // props.getData(data);
+
+
+        console.log(userID.data);
+        if(userID.data === "NoUser"){
+            alert("No such user exit/ wrong credentials")
+        }else{
+            localStorage.setItem("userID", userID.data.id);
+            localStorage.setItem("authorName", userID.data.firstName + " " + userID.data.lastName);
+            navigate("/home")
+        }
     }
 
     return <>

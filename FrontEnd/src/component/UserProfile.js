@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { Link, Navigate, useNavigate } from "react-router-dom";
+
+
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -9,6 +12,9 @@ import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 
 
 export default function UserProfile() {
+
+  const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -21,9 +27,10 @@ export default function UserProfile() {
   };
 
   const logoutHandler = () =>{
-    localStorage.removeItem("userId");
+    localStorage.removeItem("userID");
     localStorage.removeItem("authorName");
     console.log("logout");
+    navigate("/", {replace:true})
   }
 
   return (
